@@ -1,9 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using taximeter.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+//var connectionString = builder.Configuration.GetConnectionString(taximeter);
+
 var app = builder.Build();
+
+builder.Services.AddDbContext<TaximeterDbContext>(configure => configure.UseSqlServer
+("JMERCALLY\\MSSQLSERVER01; Initial Catalog=Taximeter; Integrated Security=True; TrustServerCertificate=True;"));
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
