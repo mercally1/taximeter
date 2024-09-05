@@ -20,12 +20,6 @@ public class Trayecto
     [Required]
     public int TaxiId { get; set; }
 
-    [Required]
-    public string? Nombre { get; set; }
-
-    [ForeignKey(nameof(Taxi))]
+    [ForeignKey(nameof(TaxiId))]
     public virtual Taxi? Taxi { get; set; }
-
-    [ForeignKey(nameof(Nombre))]
-    public virtual Conductor? Conductor { get; set; }
 }

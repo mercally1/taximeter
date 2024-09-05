@@ -23,6 +23,6 @@ public class Taxi
     [Required, MaxLength(4), Display(Name = "Año")]
     public int Anho { get; set; }
 
-    [ForeignKey(nameof(Conductor))]
+    [ForeignKey(nameof(ConductorId))]
     public virtual Conductor? Conductor { get; set; }
 }
