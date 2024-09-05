@@ -1,0 +1,50 @@
+﻿@model taximeter.Entity.Trayecto
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Trayecto";
+}
+
+<h1>Edit</h1>
+
+<h4>Trayecto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TrayectoId" />
+            <div class="form-group">
+                <label asp-for="Ubicacion_Inicial" class="control-label"></label>
+                <input asp-for="Ubicacion_Inicial" class="form-control" />
+                <span asp-validation-for="Ubicacion_Inicial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ubicacion_Final" class="control-label"></label>
+                <input asp-for="Ubicacion_Final" class="form-control" />
+                <span asp-validation-for="Ubicacion_Final" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kilometraje" class="control-label"></label>
+                <input asp-for="Kilometraje" class="form-control" />
+                <span asp-validation-for="Kilometraje" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaxiId" class="control-label"></label>
+                <select asp-for="TaxiId" class="form-control" asp-items="ViewBag.TaxiId"></select>
+                <span asp-validation-for="TaxiId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
