@@ -14,7 +14,7 @@ public class Trayecto
     [Required, Display(Name = "Ubicacion Final")]
     public string? Ubicacion_Final { get; set; }
 
-    [Required, MinLength(5)]
+    [Required, MaxLength(5)]
     public string? Kilometraje { get; set; }
 
     [Required]
