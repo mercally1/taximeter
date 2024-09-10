@@ -18,8 +18,8 @@ namespace taximeter.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Apellido = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Licencia = table.Column<int>(type: "int", maxLength: 20, nullable: false),
-                    Contacto = table.Column<int>(type: "int", maxLength: 20, nullable: false)
+                    Licencia = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Contacto = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -36,7 +36,7 @@ namespace taximeter.Migrations
                     Placa = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     Marca = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Model = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Anho = table.Column<int>(type: "int", maxLength: 4, nullable: false)
+                    Anho = table.Column<string>(type: "nvarchar(4)", maxLength: 4, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -55,9 +55,9 @@ namespace taximeter.Migrations
                 {
                     TrayectoId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Ubicacion_Inicial = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Ubicacion_Inicial = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Ubicacion_Final = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Kilometraje = table.Column<int>(type: "int", nullable: false),
+                    Kilometraje = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TaxiId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
