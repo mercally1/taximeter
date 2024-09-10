@@ -13,6 +13,10 @@ public class Trayecto
     public string? Ubicacion_Inicial { get; set; }
 
     [Required, MinLength(100), Display(Name = "Ubicacion Final")]
+  
+    [Required, Display(Name = "Ubicacion Inicial")]
+    public string? Ubicacion_Inicial { get; set; }
+
     [Required, Display(Name = "Ubicacion Final")]
     public string? Ubicacion_Final { get; set; }
 
