@@ -8,18 +8,18 @@ public class Trayecto
     [Key]
     public int TrayectoId { get; set; }
 
-    [Required, MaxLength(100)]
+    [Required, MaxLength(100), Display(Name = "Ubicacion Inicial")]
     public string? Ubicacion_Inicial { get; set; }
 
-    [Required, MinLength(100)]
+    [Required, Display(Name = "Ubicacion Final")]
     public string? Ubicacion_Final { get; set; }
 
-    [Required, MinLength(5)]
-    public int Kilometraje { get; set; }
+    [Required, MaxLength(5)]
+    public string? Kilometraje { get; set; }
 
     [Required]
     public int TaxiId { get; set; }
 
-    [ForeignKey(nameof(TaxiId))]
+    [ForeignKey("TaxiId")]
     public virtual Taxi? Taxi { get; set; }
 }

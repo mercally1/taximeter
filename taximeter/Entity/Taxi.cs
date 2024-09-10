@@ -21,8 +21,8 @@ public class Taxi
     public string? Model { get; set; }
 
     [Required, MaxLength(4), Display(Name = "Año")]
-    public int Anho { get; set; }
+    public string? Anho { get; set; }
 
-    [ForeignKey(nameof(ConductorId))]
+    [ForeignKey("ConductorId")]
     public virtual Conductor? Conductor { get; set; }
 }

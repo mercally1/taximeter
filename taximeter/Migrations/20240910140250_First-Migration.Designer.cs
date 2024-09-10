@@ -11,7 +11,7 @@ using taximeter.Data;
 namespace taximeter.Migrations
 {
     [DbContext(typeof(TaximeterDbContext))]
-    [Migration("20240905201404_First-Migration")]
+    [Migration("20240910140250_First-Migration")]
     partial class FirstMigration
     {
         /// <inheritdoc />
@@ -37,13 +37,15 @@ namespace taximeter.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("Contacto")
+                    b.Property<string>("Contacto")
+                        .IsRequired()
                         .HasMaxLength(20)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(20)");
 
-                    b.Property<int>("Licencia")
+                    b.Property<string>("Licencia")
+                        .IsRequired()
                         .HasMaxLength(20)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -63,9 +65,10 @@ namespace taximeter.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TaxiId"));
 
-                    b.Property<int>("Anho")
+                    b.Property<string>("Anho")
+                        .IsRequired()
                         .HasMaxLength(4)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(4)");
 
                     b.Property<int>("ConductorId")
                         .HasColumnType("int");
@@ -100,8 +103,9 @@ namespace taximeter.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TrayectoId"));
 
-                    b.Property<int>("Kilometraje")
-                        .HasColumnType("int");
+                    b.Property<string>("Kilometraje")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TaxiId")
                         .HasColumnType("int");
@@ -112,8 +116,7 @@ namespace taximeter.Migrations
 
                     b.Property<string>("Ubicacion_Inicial")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TrayectoId");
 

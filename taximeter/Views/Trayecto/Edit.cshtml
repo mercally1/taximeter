@@ -2,12 +2,9 @@
 
 @{
     ViewData["Title"] = "Edit";
-    Layout = "~/Views/Trayecto";
 }
 
-<h1>Edit</h1>
-
-<h4>Trayecto</h4>
+<h1>Editar Trayecto</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -33,16 +30,13 @@
                 <label asp-for="TaxiId" class="control-label"></label>
                 <select asp-for="TaxiId" class="form-control" asp-items="ViewBag.TaxiId"></select>
                 <span asp-validation-for="TaxiId" class="text-danger"></span>
-            </div>
+            </div><br>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <a asp-action="Index"><input type="submit" value="Volver a la lista" class = "btn btn-info"></a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

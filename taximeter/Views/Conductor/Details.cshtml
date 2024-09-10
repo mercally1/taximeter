@@ -2,10 +2,9 @@
 
 @{
     ViewData["Title"] = "Details";
-    Layout = "~/Views/Conductor";
 }
 
-<h1>Details</h1>
+<h1>Detalles</h1>
 
 <div>
     <h4>Conductor</h4>
@@ -38,6 +37,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.ConductorId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.ConductorId"><input type="submit" value="Editar" class = "btn btn-primary"></a>
+    <a asp-action="Index"><input type="submit" value="Volver a la lista" class = "btn btn-info"></a>
 </div>

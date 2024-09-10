@@ -4,10 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Reporte de Trayecto</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create"><input type="submit" value="Crear nuevo trayecto" class = "btn btn-success"></a></a>
 </p>
 <table class="table">
     <thead>
@@ -40,12 +40,12 @@
                 @Html.DisplayFor(modelItem => item.Kilometraje)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Taxi.Marca)
+                @Html.DisplayFor(modelItem => item.Taxi.Anho)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.TrayectoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TrayectoId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TrayectoId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.TrayectoId"><input type="submit" value="Editar" class = "btn btn-success"></a> 
+                <a asp-action="Details" asp-route-id="@item.TrayectoId"><input type="submit" value="Detalles" class = "btn btn-primary"></a>
+                <a asp-action="Delete" asp-route-id="@item.TrayectoId"><input type="submit" value="Borrar" class = "btn btn-danger"></a>
             </td>
         </tr>
 }
