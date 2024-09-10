@@ -7,7 +7,7 @@ public class Trayecto
 {
     [Key]
     public int TrayectoId { get; set; }
-
+  
     [Required, Display(Name = "Ubicacion Inicial")]
     public string? Ubicacion_Inicial { get; set; }
 
