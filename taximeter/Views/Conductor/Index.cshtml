@@ -7,7 +7,7 @@
 <h1>Reporte de Conductores</h1>
 
 <p>
-    <a asp-action="Create">Crear Nuevo Conductor</a>
+    <a asp-action="Create"><input type="submit" value="Crear Nuevo Conductor" class="btn btn-success"></a>
 </p>
 <table class="table">
     <thead>
@@ -43,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.Contacto)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ConductorId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.ConductorId">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.ConductorId">Borrar</a>
+                <a asp-action="Edit" asp-route-id="@item.ConductorId"><input type="submit" value="Editar" class = "btn btn-success"></a> 
+                <a asp-action="Details" asp-route-id="@item.ConductorId"><input type="submit" value="Detalles" class = "btn btn-primary"></a> 
+                <a asp-action="Delete" asp-route-id="@item.ConductorId"><input type="submit" value="Borrar" class = "btn btn-danger"></a>
             </td>
         </tr>
 }
