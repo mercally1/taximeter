@@ -19,13 +19,13 @@ namespace taximeter.Controllers
             _context = context;
         }
 
-        // GET: Conductors
+        // GET: Conductor
         public async Task<IActionResult> Index()
         {
             return View(await _context.Conductores.ToListAsync());
         }
 
-        // GET: Conductors/Details/5
+        // GET: Conductor/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,13 +43,13 @@ namespace taximeter.Controllers
             return View(conductor);
         }
 
-        // GET: Conductors/Create
+        // GET: Conductor/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Conductors/Create
+        // POST: Conductor/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -65,7 +65,7 @@ namespace taximeter.Controllers
             return View(conductor);
         }
 
-        // GET: Conductors/Edit/5
+        // GET: Conductor/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,7 +81,7 @@ namespace taximeter.Controllers
             return View(conductor);
         }
 
-        // POST: Conductors/Edit/5
+        // POST: Conductor/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -116,7 +116,7 @@ namespace taximeter.Controllers
             return View(conductor);
         }
 
-        // GET: Conductors/Delete/5
+        // GET: Conductor/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,7 +134,7 @@ namespace taximeter.Controllers
             return View(conductor);
         }
 
-        // POST: Conductors/Delete/5
+        // POST: Conductor/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

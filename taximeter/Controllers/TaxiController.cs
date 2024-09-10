@@ -19,14 +19,14 @@ namespace taximeter.Controllers
             _context = context;
         }
 
-        // GET: Taxis
+        // GET: Taxi
         public async Task<IActionResult> Index()
         {
             var taximeterDbContext = _context.Taxis.Include(t => t.Conductor);
             return View(await taximeterDbContext.ToListAsync());
         }
 
-        // GET: Taxis/Details/5
+        // GET: Taxi/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,14 +45,14 @@ namespace taximeter.Controllers
             return View(taxi);
         }
 
-        // GET: Taxis/Create
+        // GET: Taxi/Create
         public IActionResult Create()
         {
             ViewData["ConductorId"] = new SelectList(_context.Conductores, "ConductorId", "Apellido");
             return View();
         }
 
-        // POST: Taxis/Create
+        // POST: Taxi/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -69,7 +69,7 @@ namespace taximeter.Controllers
             return View(taxi);
         }
 
-        // GET: Taxis/Edit/5
+        // GET: Taxi/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,7 +86,7 @@ namespace taximeter.Controllers
             return View(taxi);
         }
 
-        // POST: Taxis/Edit/5
+        // POST: Taxi/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -122,7 +122,7 @@ namespace taximeter.Controllers
             return View(taxi);
         }
 
-        // GET: Taxis/Delete/5
+        // GET: Taxi/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -141,7 +141,7 @@ namespace taximeter.Controllers
             return View(taxi);
         }
 
-        // POST: Taxis/Delete/5
+        // POST: Taxi/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

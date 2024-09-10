@@ -19,14 +19,14 @@ namespace taximeter.Controllers
             _context = context;
         }
 
-        // GET: Trayecto
+        // GET: Trayectoes
         public async Task<IActionResult> Index()
         {
             var taximeterDbContext = _context.Trayectos.Include(t => t.Taxi);
             return View(await taximeterDbContext.ToListAsync());
         }
 
-        // GET: Trayecto/Details/5
+        // GET: Trayectoes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,14 +45,14 @@ namespace taximeter.Controllers
             return View(trayecto);
         }
 
-        // GET: Trayecto/Create
+        // GET: Trayectoes/Create
         public IActionResult Create()
         {
-            ViewData["TaxiId"] = new SelectList(_context.Taxis, "TaxiId", "Marca");
+            ViewData["TaxiId"] = new SelectList(_context.Taxis, "TaxiId", "Anho");
             return View();
         }
 
-        // POST: Trayecto/Create
+        // POST: Trayectoes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -65,11 +65,11 @@ namespace taximeter.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TaxiId"] = new SelectList(_context.Taxis, "TaxiId", "Marca", trayecto.TaxiId);
+            ViewData["TaxiId"] = new SelectList(_context.Taxis, "TaxiId", "Anho", trayecto.TaxiId);
             return View(trayecto);
         }
 
-        // GET: Trayecto/Edit/5
+        // GET: Trayectoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,11 +82,11 @@ namespace taximeter.Controllers
             {
                 return NotFound();
             }
-            ViewData["TaxiId"] = new SelectList(_context.Taxis, "TaxiId", "Marca", trayecto.TaxiId);
+            ViewData["TaxiId"] = new SelectList(_context.Taxis, "TaxiId", "Anho", trayecto.TaxiId);
             return View(trayecto);
         }
 
-        // POST: Trayecto/Edit/5
+        // POST: Trayectoes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -118,11 +118,11 @@ namespace taximeter.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TaxiId"] = new SelectList(_context.Taxis, "TaxiId", "Marca", trayecto.TaxiId);
+            ViewData["TaxiId"] = new SelectList(_context.Taxis, "TaxiId", "Anho", trayecto.TaxiId);
             return View(trayecto);
         }
 
-        // GET: Trayecto/Delete/5
+        // GET: Trayectoes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -141,7 +141,7 @@ namespace taximeter.Controllers
             return View(trayecto);
         }
 
-        // POST: Trayecto/Delete/5
+        // POST: Trayectoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

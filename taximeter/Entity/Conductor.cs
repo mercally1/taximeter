@@ -14,8 +14,8 @@ public class Conductor
     public string? Apellido { get; set; }
 
     [Required, MaxLength(20)]
-    public int Licencia { get; set; }
+    public string? Licencia { get; set; }
 
     [Required, MaxLength(20)]
-    public int Contacto { get; set; }
+    public string? Contacto { get; set; }
 }
